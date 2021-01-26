@@ -21,10 +21,10 @@ bash <(curl -s -L https://git.io/233v334.sh)
 ```
 
 # 后记
-如果你想安装233脚本的某个版本，可以把 233v334.sh 修改一下。
-
-修改git clone那一行，从233的库里取某个版本下来就可以了。git的用法请自行搜索学习。
 
 233的脚本从本地安装时，必须在 install.sh 脚本所在的目录执行
 
 install.sh 的 795 行，检查$(pwd)/config目录
+
+# 如果你想在最新的233脚本上指定下载某个版本的v2ray
+https://zelikk.blogspot.com/2021/01/233v2ray-local.html
