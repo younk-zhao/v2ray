@@ -30,4 +30,4 @@ install.sh 的 795 行，检查$(pwd)/config目录
 https://zelikk.blogspot.com/2021/01/233v2ray-local.html
 
 # 如果你想下载某个“旧版本”的233脚本
-https://zelikk.blogspot.com/2021/01/github-commit-233-v2ray.html
+https://zelikk.blogspot.com/2021/01/233v2ray-github-commit-.html
