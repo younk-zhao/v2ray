@@ -132,7 +132,7 @@ create_vmess_URL_config() {
 		cat >/etc/v2ray/vmess_qr.json <<-EOF
 		{
 			"v": "2",
-			"ps": "233v2.com_${domain}",
+			"ps": "${domain}",
 			"add": "${domain}",
 			"port": "443",
 			"id": "${v2ray_id}",
@@ -149,7 +149,7 @@ create_vmess_URL_config() {
 		cat >/etc/v2ray/vmess_qr.json <<-EOF
 		{
 			"v": "2",
-			"ps": "233v2.com_${ip}",
+			"ps": "${ip}",
 			"add": "${ip}",
 			"port": "${v2ray_port}",
 			"id": "${v2ray_id}",
@@ -1158,9 +1158,10 @@ path_config_ask() {
 path_config() {
 	echo
 	while :; do
-		echo -e "请输入想要 ${magenta}用来分流的路径$none , 例如 /233blog , 那么只需要输入 233blog 即可"
-		read -p "$(echo -e "(默认: [${cyan}233blog$none]):")" new_path
-		[[ -z $new_path ]] && new_path="233blog"
+		echo -e "请输入想要 ${magenta}用来分流的路径$none , 例如 /ciys , 那么只需要输入 ciys 即可"
+		default_path=$(head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20)
+		read -p "$(echo -e "(默认: [${cyan}$default_path$none]):")" new_path
+		[[ -z $new_path ]] && new_path=$default_path
 
 		case $new_path in
 		*[/$]*)
@@ -1184,13 +1185,13 @@ path_config() {
 proxy_site_config() {
 	echo
 	while :; do
-		echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://liyafly.com"
-		echo -e "举例...假设你当前的域名是$green $domain $none, 伪装的网址的是 https://liyafly.com"
-		echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://liyafly.com 的内容"
+		echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://zelikk.blogspot.com"
+		echo -e "举例...假设你当前的域名是$green $domain $none, 伪装的网址的是 https://zelikk.blogspot.com"
+		echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://zelikk.blogspot.com 的内容"
 		echo -e "其实就是一个反代...明白就好..."
 		echo -e "如果不能伪装成功...可以使用 v2ray config 修改伪装的网址"
-		read -p "$(echo -e "(默认: [${cyan}https://liyafly.com$none]):")" new_proxy_site
-		[[ -z $new_proxy_site ]] && new_proxy_site="https://liyafly.com"
+		read -p "$(echo -e "(默认: [${cyan}https://zelikk.blogspot.com$none]):")" new_proxy_site
+		[[ -z $new_proxy_site ]] && new_proxy_site="https://zelikk.blogspot.com"
 
 		case $new_proxy_site in
 		*[#$]*)
@@ -1688,9 +1689,9 @@ change_proxy_site_config() {
 	if [[ $v2ray_transport == [45] ]] && [[ $caddy && $is_path ]]; then
 		echo
 		while :; do
-			echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://liyafly.com"
-			echo -e "举例...你当前的域名是$green $domain $none, 伪装的网址的是 https://liyafly.com"
-			echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://liyafly.com 的内容"
+			echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://zelikk.blogspot.com"
+			echo -e "举例...你当前的域名是$green $domain $none, 伪装的网址的是 https://zelikk.blogspot.com"
+			echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://zelikk.blogspot.com 的内容"
 			echo -e "其实就是一个反代...明白就好..."
 			echo -e "如果不能伪装成功...可以使用 v2ray config 修改伪装的网址"
 			read -p "$(echo -e "(当前伪装的网址: [${cyan}${proxy_site}$none]):")" new_proxy_site
