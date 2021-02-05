@@ -2872,7 +2872,7 @@ reinstall)
 [aA][Ii] | [Dd])
 	change_v2ray_alterId
 	;;
-[aA][Ii][aA][Ii] | [Dd][Dd])
+[aA][Ii][aA][Ii] | [Dd][Dd] | aid)
 	custom_uuid
 	;;
 reuuid)
