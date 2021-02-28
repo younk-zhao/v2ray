@@ -31,3 +31,7 @@ https://zelikk.blogspot.com/2021/01/233v2ray-local.html
 
 # 如果你想下载某个“旧版本”的233脚本
 https://zelikk.blogspot.com/2021/01/233v2ray-github-commit-.html
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/crazypeace/v2ray.svg)](https://starchart.cc/crazypeace/v2ray)
