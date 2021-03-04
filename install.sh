@@ -483,13 +483,13 @@ path_config() {
 proxy_site_config() {
 	echo
 	while :; do
-		echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://liyafly.com"
-		echo -e "举例...你当前的域名是 $green$domain$none , 伪装的网址的是 https://liyafly.com"
-		echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://liyafly.com 的内容"
+		echo -e "请输入 ${magenta}一个正确的$none ${cyan}网址$none 用来作为 ${cyan}网站的伪装$none , 例如 https://zelikk.blogspot.com"
+		echo -e "举例...你当前的域名是 $green$domain$none , 伪装的网址的是 https://zelikk.blogspot.com"
+		echo -e "然后打开你的域名时候...显示出来的内容就是来自 https://zelikk.blogspot.com 的内容"
 		echo -e "其实就是一个反代...明白就好..."
 		echo -e "如果不能伪装成功...可以使用 v2ray config 修改伪装的网址"
-		read -p "$(echo -e "(默认: [${cyan}https://liyafly.com$none]):")" proxy_site
-		[[ -z $proxy_site ]] && proxy_site="https://liyafly.com"
+		read -p "$(echo -e "(默认: [${cyan}https://zelikk.blogspot.com$none]):")" proxy_site
+		[[ -z $proxy_site ]] && proxy_site="https://zelikk.blogspot.com"
 
 		case $proxy_site in
 		*[#$]*)
